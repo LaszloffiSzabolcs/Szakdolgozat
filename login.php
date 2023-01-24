@@ -10,15 +10,14 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
 	   $data = htmlspecialchars($data);
 	   return $data;
 	}
-
 	$uname = validate($_POST['uname']);
 	$pass = validate($_POST['password']);
 
 	if (empty($uname)) {
-		header("Location: index.php?error=User Name is required");
+		header("Location: Bejelentkezes.php?error=Felhasználónév szükséges");
 	    exit();
 	}else if(empty($pass)){
-        header("Location: index.php?error=Password is required");
+        header("Location: Bejelentkezes.php?error=Jelszó szükséges");
 	    exit();
 	}else{
 		$sql = "SELECT * FROM felhasznalo WHERE nev='$uname' AND jelszo='$pass'";
@@ -27,18 +26,18 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
 
 		if (mysqli_num_rows($result) === 1) {
 			$row = mysqli_fetch_assoc($result);
-            if ($row['nev'] === $uname && $row['jelszo'] === $pass) {
+            if ($row['felhasznalonev'] === $uname && $row['jelszo'] === $pass) {
+            	$_SESSION['felhasznalonev'] = $row['felhasznalonev'];
             	$_SESSION['nev'] = $row['nev'];
-            	$_SESSION['name'] = $row['name'];
             	$_SESSION['id'] = $row['id'];
             	header("Location: home.php");
 		        exit();
             }else{
-				header("Location: index.php?error=Incorect User name or password");
+				header("Location: index.php?error=Rossz felhasználónév vagy jelszó");
 		        exit();
 			}
 		}else{
-			header("Location: index.php?error=Incorect User name or password");
+			header("Location: index.php?error=Rossz felhasználónév vagy jelszó");
 	        exit();
 		}
 	}

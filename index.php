@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>LOGIN</title>
+	<title>Bejelenzkezés</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
      <form action="login.php" method="post">
-     	<h2>LOGIN</h2>
+     	<h2>Bejelentkezés</h2>
      	<?php if (isset($_GET['error'])) { ?>
      		<p class="error"><?php echo $_GET['error']; ?></p>
      	<?php } ?>
-     	<label>User Name</label>
-     	<input type="text" name="uname" placeholder="Írd be a felhasználóneved"><br>
+     	<label>Felhasználónév</label>
+     	<input type="text" name="nev" placeholder="Írd be a felhasználóneved" require="required"><br>
 
-     	<label>User Name</label>
-     	<input type="password" name="password" placeholder="Írd be a jelszót"><br>
+     	<label>Jelszó</label>
+     	<input type="password" name="jelszo" placeholder="Írd be a jelszót" require="required"><br>
 
-     	<button type="submit">Login</button>
+     	<button type="submit">Bejelentkezés</button>
      </form>
 </body>
 </html>
