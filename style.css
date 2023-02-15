@@ -85,6 +85,6 @@ footer {
 	background: #FBF8BE;
 	border-radius: 15px;
 	position: absolute;
-  	bottom: 0;
-  	height: 2.5rem;    
+	height: 50px;
+  	bottom: 0;   
 }

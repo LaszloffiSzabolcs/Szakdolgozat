@@ -13,6 +13,9 @@ if (isset($_SESSION['id']) && isset($_SESSION['nev'])) {
 <body>
      <h1>Hello, <?php echo $_SESSION['nev']; ?></h1>
      <a href="logout.php">Logout</a>
+     <?php
+	require "view/layout/footer.php";
+	?>
 </body>
 </html>
 
