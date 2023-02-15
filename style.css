@@ -1,5 +1,5 @@
 body {
-	background: #1690A7;
+	background: #234E70;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -16,7 +16,7 @@ form {
 	width: 500px;
 	border: 2px solid #ccc;
 	padding: 30px;
-	background: #fff;
+	background: #FBF8BE;
 	border-radius: 15px;
 }
 
@@ -34,14 +34,14 @@ input {
 	border-radius: 5px;
 }
 label {
-	color: #888;
+	color: rgb(0, 0, 0);
 	font-size: 18px;
 	padding: 10px;
 }
 
 button {
 	float: right;
-	background: #555;
+	background: #234E70;
 	padding: 10px 15px;
 	color: #fff;
 	border-radius: 5px;
