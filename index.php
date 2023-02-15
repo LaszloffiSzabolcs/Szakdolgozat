@@ -2,7 +2,7 @@
 <html>
 <head>
 	
-	<title>Bejelenzkezés</title>
+	<title>Pizza Rapido dolgozói felület</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
