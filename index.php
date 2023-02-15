@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	
 	<title>Bejelenzkezés</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -18,5 +19,8 @@
 
      	<button type="submit">Bejelentkezés</button>
      </form>
+	 <?php
+	require "view/layout/footer.php";
+	?>
 </body>
 </html>
