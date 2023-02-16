@@ -30,19 +30,19 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
             	$_SESSION['felhasznalonev'] = $row['felhasznalonev'];
             	$_SESSION['nev'] = $row['nev'];
             	$_SESSION['id'] = $row['id'];
-            	header("Location: home.php");
+            	header("Location: ../view/home.php");
 		        exit();
             }else{
-				header("Location: index.php?error=Rossz felhasználónév vagy jelszó");
+				header("Location: ../index.php?error=Rossz felhasználónév vagy jelszó");
 		        exit();
 			}
 		}else{
-			header("Location: index.php?error=Rossz felhasználónév vagy jelszó");
+			header("Location: ../index.php?error=Rossz felhasználónév vagy jelszó");
 	        exit();
 		}
 	}
 	
 }else{
-	header("Location: index.php");
+	header("Location: ../index.php");
 	exit();
 }
