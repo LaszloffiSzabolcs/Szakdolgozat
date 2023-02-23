@@ -14,10 +14,10 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
 	$pass = validate($_POST['password']);
 
 	if (empty($uname)) {
-		header("Location: Bejelentkezes.php?error=Felhasználónév szükséges");
+		header("Location: ..view/home.php?error=Felhasználónév szükséges");
 	    exit();
 	}else if(empty($pass)){
-        header("Location: Bejelentkezes.php?error=Jelszó szükséges");
+        header("Location: ..view/home.php?error=Jelszó szükséges");
 	    exit();
 	}else{
 		$sql = "SELECT * FROM felhasznalo WHERE nev='$uname' AND jelszo='$pass'";
@@ -33,16 +33,16 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
             	header("Location: ../view/home.php");
 		        exit();
             }else{
-				header("Location: ../index.php?error=Rossz felhasználónév vagy jelszó");
+				header("Location: ..view/home.php?error=Rossz felhasználónév vagy jelszó");
 		        exit();
 			}
 		}else{
-			header("Location: ../index.php?error=Rossz felhasználónév vagy jelszó");
+			header("Location: ..view/home.php?error=Rossz felhasználónév vagy jelszó");
 	        exit();
 		}
 	}
 	
 }else{
-	header("Location: ../index.php");
+	header("Location: ../view/home.php");
 	exit();
 }

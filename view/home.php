@@ -21,7 +21,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['nev'])) {
 
 <?php 
 }else{
-     header("Location: index.php");
+     header("Location: home.php");
      exit();
 }
  ?>
