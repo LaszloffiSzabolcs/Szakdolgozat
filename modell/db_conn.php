@@ -3,13 +3,33 @@
 $sname= "localhost";
 $uname= "c31laszloffidbu";
 $password = "kxwVwBA4!";
-
 $db_name = "c31laszloffidb";
 
-$conn = mysqli_connect($sname, $uname, $password, $db_name);
+function __construct() {
+	// Create connection
+	$conn = new mysqli($this->servername, $this->username, $this->password, $this->dbname);
 
-
-
-if (!$conn) {
-	echo "Sikertelen csatlakozás";
+	// Check connection
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+	}
+	$this->conn = $conn;
 }
+
+/**
+ * 
+ */
+public function dbSelect($sql) {
+	if($result = $this->conn->query($sql)) {
+		if ($result->num_rows > 0) {
+			return $result; 
+		  }
+		  else {
+			  return NULL;
+		  }
+	}
+	elseif($this->conn->error) {
+		die("SQL hiba: " . $this->conn->error);
+	}
+}
+?>
