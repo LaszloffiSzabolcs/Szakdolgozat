@@ -6,6 +6,9 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+	<?php 
+	session_start();
+	?>
      <form action="controller/login.php" method="post">
      	<h2>Bejelentkezés</h2>
      	<?php if (isset($_GET['error'])) { ?>
