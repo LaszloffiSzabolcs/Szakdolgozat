@@ -6,7 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-     <form action="controller/login.php" method="post">
+     <form action="index.php" method="post">
      	<h2>Bejelentkezés</h2>
      	<?php if (isset($_GET['error'])) { ?>
      		<p class="error"><?php echo $_GET['error']; ?></p>
@@ -17,10 +17,11 @@
      	<label>Jelszó</label>
      	<input type="password" name="jelszo" placeholder="Írd be a jelszót" require="required"><br>
 
-     	<button type="submit">Bejelentkezés</button>
+     	<input type="submit">
+		<input type="hidden" name="action" value="login">
+        <input type="hidden" name="page" value="login">
+
      </form>
 	 <?php
 	require "view/layout/footer.php";
 	?>
-</body>
-</html>

@@ -22,14 +22,20 @@
         break;
 
         case 'login':
-            if(isset($_POST['username']) && isset($_POST['password'])){
+			$login='';
+			if(isset($_POST['nev']) && isset($_POST['jelszo'])){
 
-            $login = $user->checkLogin($_POST['username'], $_POST['password']);
+            $login = $user->checkLogin($_POST['nev'], $_POST['jelszo']);
 
             $loginResult = $loginReaction[$login];
 
             echo $loginResult . "<br>";
             }
+			if($login==2){
+				header("Location: index.php?page=home");
+				exit();
+			}
         break;
     }
+	print_r($_SESSION);
     require 'view/login.php';
