@@ -1,47 +1,35 @@
-<?php  
-include "modell/db_conn.php";
+<?php
 
-if (isset($_POST['uname']) && isset($_POST['password'])) {
+    require 'model/user.php';
+    $user= new User($db);
 
-	function validate($data){
-       $data = trim($data);
-	   $data = stripslashes($data);
-	   $data = htmlspecialchars($data);
-	   return $data;
-	}
-	$uname = validate($_POST['uname']);
-	$pass = validate($_POST['password']);
+    $loginResult = "";
 
-	if (empty($uname)) {
-		header("Location: ..view/home.php?error=Felhasználónév szükséges");
-	    exit();
-	}else if(empty($pass)){
-        header("Location: ..view/home.php?error=Jelszó szükséges");
-	    exit();
-	}else{
-		$sql = "SELECT * FROM felhasznalo WHERE nev='$uname' AND jelszo='$pass'";
+    $action = "";
 
-		$result = mysqli_query($conn, $sql);
+    $action = $_REQUEST['action'] ?? "";
 
-		if (mysqli_num_rows($result) === 1) {
-			$row = mysqli_fetch_assoc($result);
-            if ($row['felhasznalonev'] === $uname && $row['jelszo'] === $pass) {
-            	$_SESSION['felhasznalonev'] = $row['felhasznalonev'];
-            	$_SESSION['nev'] = $row['nev'];
-            	$_SESSION['id'] = $row['id'];
-            	header("Location: ../view/home.php");
-		        exit();
-            }else{
-				header("Location: ..view/home.php?error=Rossz felhasználónév vagy jelszó");
-		        exit();
-			}
-		}else{
-			header("Location: ..view/home.php?error=Rossz felhasználónév vagy jelszó");
-	        exit();
-		}
-	}
-	
-}else{
-	header("Location: ../view/home.php");
-	exit();
-}
+    $loginReaction = array(
+        "Login Failed: Wrong Username",
+        "Login Failed: Wrong Password",
+        "Login Successful",
+    );
+
+    switch ($action){
+        case 'logout':
+            session_unset();
+            $loginResult = "Logged out Successful";
+        break;
+
+        case 'login':
+            if(isset($_POST['username']) && isset($_POST['password'])){
+
+            $login = $user->checkLogin($_POST['username'], $_POST['password']);
+
+            $loginResult = $loginReaction[$login];
+
+            echo $loginResult . "<br>";
+            }
+        break;
+    }
+    require '../index.php';

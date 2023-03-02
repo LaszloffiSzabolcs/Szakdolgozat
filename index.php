@@ -1,29 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-	
-	<title>Pizza Rapido dolgozói felület</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-	<?php 
-	session_start();
-	?>
-     <form action="controller/login.php" method="post">
-     	<h2>Bejelentkezés</h2>
-     	<?php if (isset($_GET['error'])) { ?>
-     		<p class="error"><?php echo $_GET['error']; ?></p>
-     	<?php } ?>
-     	<label>Felhasználónév</label>
-     	<input type="text" name="nev" placeholder="Írd be a felhasználóneved" require="required"><br>
+<?php
 
-     	<label>Jelszó</label>
-     	<input type="password" name="jelszo" placeholder="Írd be a jelszót" require="required"><br>
+    session_start();
 
-     	<button type="submit">Bejelentkezés</button>
-     </form>
-	 <?php
-	require "view/layout/footer.php";
-	?>
-</body>
-</html>
+    require 'modell/db_conn.php';
+    $db = new DataBase();
+
+    $page = $_REQUEST['page'] ?? "login";
+
+    $controllerFile = 'controller/'.$page.'.php';
+
+    if(file_exists($controllerFile)){
+        require $controllerFile;
+    }

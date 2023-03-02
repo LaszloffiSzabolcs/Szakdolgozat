@@ -1,13 +1,15 @@
 <?php
+Class DataBase{
+private	$sname= "localhost";
+private $uname= "c31laszloffidbu";
+private $password = "kxwVwBA4!";
+private $db_name = "c31laszloffidb";
 
-$sname= "localhost";
-$uname= "c31laszloffidbu";
-$password = "kxwVwBA4!";
-$db_name = "c31laszloffidb";
+private $conn;
 
 function __construct() {
 	// Create connection
-	$conn = new mysqli($this->servername, $this->username, $this->password, $this->dbname);
+	$conn = new mysqli($this->sname, $this->uname, $this->password, $this->db_name);
 
 	// Check connection
 	if ($conn->connect_error) {
@@ -16,9 +18,6 @@ function __construct() {
 	$this->conn = $conn;
 }
 
-/**
- * 
- */
 public function dbSelect($sql) {
 	if($result = $this->conn->query($sql)) {
 		if ($result->num_rows > 0) {
@@ -32,4 +31,7 @@ public function dbSelect($sql) {
 		die("SQL hiba: " . $this->conn->error);
 	}
 }
+}
+
+
 ?>
