@@ -1,6 +1,6 @@
 <?php
 
-    require 'model/user.php';
+    require 'modell/user.php';
     $user= new User($db);
 
     $loginResult = "";
@@ -32,4 +32,4 @@
             }
         break;
     }
-    require '../index.php';
+    require 'view/login.php';

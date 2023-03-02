@@ -5,7 +5,7 @@
     require 'modell/db_conn.php';
     $db = new DataBase();
 
-    $page = $_REQUEST['page'] ?? "login";
+    $page = $_REQUEST['page'] ?? "index";
 
     $controllerFile = 'controller/'.$page.'.php';
 
