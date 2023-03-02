@@ -1,7 +1,5 @@
 <?php 
-session_start();
-
-if (isset($_SESSION['id']) && isset($_SESSION['nev'])) {
+if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
 
  ?>
 <!DOCTYPE html>
@@ -12,7 +10,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['nev'])) {
 </head>
 <body>
      <h1>Hello, <?php echo $_SESSION['nev']; ?></h1>
-     <a href="../controller/logout.php">Logout</a>
+     <a href="index.php?page=login&action=logout">Logout</a>
      <?php
 	require "view/layout/footer.php";
 	?>
@@ -21,7 +19,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['nev'])) {
 
 <?php 
 }else{
-     header("Location: home.php");
+     header("Location: index.php?page=login&action=login");
      exit();
 }
  ?>
