@@ -25,7 +25,7 @@
 			$login='';
 			if(isset($_POST['nev']) && isset($_POST['jelszo'])){
 
-            $login = $user->checkLogin($_POST['nev'], $_POST['jelszo']);
+            $login = $user->checkLogin($_POST['nev'], md5($_POST['jelszo']));
 
             $loginResult = $loginReaction[$login];
 
