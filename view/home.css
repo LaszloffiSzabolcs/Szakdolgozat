@@ -1,0 +1,27 @@
+body{
+    background: #234E70 !important;
+}
+
+footer {
+	text-align: center;
+	border: 2px solid #ccc;
+	background: #FBF8BE;
+	border-radius: 15px;
+	position: absolute;
+	height: 50px;
+  	bottom: 0;
+}
+.sticky-top {
+	position: fixed !important;
+	top: 0 !important;
+	width: 100% !important;
+	z-index: 999 !important;
+}
+.navbar-sajat{
+	background-color: #FBF8BE;
+	position: fixed !important;
+	top: 0 !important;
+	width: 100% !important;
+	justify-content: center !important;
+	align-items: center !important;
+}
