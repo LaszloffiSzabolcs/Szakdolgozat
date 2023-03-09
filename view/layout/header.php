@@ -14,16 +14,16 @@
       </li>
     </div>
     <ul class="navbar-nav navbar-right">
-    <div class="dropdown">
+    <div class="dropdown navbar-collapse">
   <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
   <?php echo $_SESSION['username'];?>
   </a>
-
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
     <li><a class="dropdown-item" href="#">placeholder</a></li>
     <li><a class="dropdown-item" href="index.php?page=login&action=logout">Logout</a></li>
   </ul>
 </div>
+
 </nav>
 </body>
 </html>
