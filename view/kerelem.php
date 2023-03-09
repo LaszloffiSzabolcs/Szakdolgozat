@@ -108,8 +108,12 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
         var ido = new Date();
         var kezd=new Date(document.getElementById("kezdate").value);
         var bef = new Date(document.getElementById("befdate").value);
-
-            alert(kezd);
+            if(kezd.length==0){
+                alert("Adjon meg egy kezdő dátumot");
+            }
+            if(bef.length==0){
+                alert("Adjon meg egy befejező dátumot");
+            }
             if(kezd<ido){
                 alert("Kezdő dátum nem lehet kisebb a mai dátumnál");
             }
