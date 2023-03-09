@@ -45,6 +45,26 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
         <div class="month-list"></div>
     </div>
 </div>
+<br>
+
+<div class="form-group d-flex justify-content-center">
+  <div class="form-check mr-3">
+    <input class="form-check-input" type="radio" name="flexRadioDefault" id="Munkanapkerelem" checked>
+    <label class="form-check-label text-white" for="flexRadioDefault1">
+      Munkanap kérelme
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="flexRadioDefault" id="Szabadnapkerelem">
+    <label class="form-check-label text-white" for="flexRadioDefault2">
+      Szabadnap kérelme
+    </label>
+  </div>
+</div><br>
+    <div class="form-group date-input-container d-flex justify-content-center align-items-center">
+        <label class="text-white">Mettől?</label>
+        <input type="date" class="form-control rounded" id="kezdate" required>
+    </div>
     <script src="calendar.js"></script>
      <?php
 	require "view/layout/footer.php";

@@ -7,12 +7,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
   <a class="navbar-brand" href="index.php?page=home">Home</a>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-  <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link text-white" href="index.php?page=kerelem">Kérelmek</a>
-      </li>
-    </div>
+  <a class="navbar-brand" href="index.php?page=kerelem">Kérelmek</a>
     <ul class="navbar-nav navbar-right">
     <div class="dropdown navbar-collapse">
   <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
