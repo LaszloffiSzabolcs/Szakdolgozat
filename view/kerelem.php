@@ -61,10 +61,61 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     </label>
   </div>
 </div><br>
-    <div class="form-group date-input-container d-flex justify-content-center align-items-center">
-        <label class="text-white">Mettől?</label>
-        <input type="date" class="form-control rounded" id="kezdate" required>
+<div class="row justify-content-center">
+  <div class="col-sm-2">
+    <div class="form-group date-input-container display-flex justify-content-center align-items-center">
+      <label class="text-white">Mettől?</label>
+      <input type="date" class="form-control rounded" id="kezdate" required>
     </div>
+  </div>
+  <div class="col-sm-2">
+    <div class="form-group date-input-container display-flex justify-content-center align-items-center">
+      <label class="text-white">Meddig?</label>
+      <input type="date" class="form-control rounded" id="befdate" required>
+    </div>
+  </div> 
+</div> 
+<div class="form-group d-flex justify-content-center">
+  <div class="form-check mr-3">
+    <input class="form-check-input" type="radio" name="muszak" value="1" id="ReggeliMusz" checked>
+    <label class="form-check-label text-white" for="flexRadioDefault1">
+      Reggeli műszak
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="muszak" value="2" id="DelutaniMusz">
+    <label class="form-check-label text-white" for="flexRadioDefault2">
+      Délutáni műszak
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="muszak" value="3" id="EstiMusz">
+    <label class="form-check-label text-white" for="flexRadioDefault2">
+      Esti Műszak
+    </label>
+  </div>
+</div>
+<br> <br><div class="col-sm-12">
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary kicsi" onclick="Check()">Kérelem leadása</button>
+    </div>
+  </div>
+  <script>
+    function Check(){
+        
+        var muszak=document.querySelector('input[name="muszak"]:checked').value;
+
+        var ido = new Date();
+        var kezd=new Date(document.getElementById("kezdate").value);
+        var bef = new Date(document.getElementById("befdate").value);
+
+            alert(kezd);
+            if(kezd<ido){
+                alert("Kezdő dátum nem lehet kisebb a mai dátumnál");
+            }
+    }
+
+  </script>
     <script src="calendar.js"></script>
      <?php
 	require "view/layout/footer.php";

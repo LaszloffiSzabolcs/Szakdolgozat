@@ -5,19 +5,21 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
   <a class="navbar-brand" href="index.php?page=home">Home</a>
   <a class="navbar-brand" href="index.php?page=kerelem">Kérelmek</a>
-    <ul class="navbar-nav navbar-right">
-    <div class="dropdown navbar-collapse">
-  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-  <?php echo $_SESSION['username'];?>
-  </a>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <li><a class="dropdown-item" href="#">placeholder</a></li>
-    <li><a class="dropdown-item" href="index.php?page=login&action=logout">Logout</a></li>
-  </ul>
-</div>
+  <div class="ms-auto">
+    <div class="dropdown">
+      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <?php echo $_SESSION['username'];?>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+        <li><a class="dropdown-item" href="#">placeholder</a></li>
+        <li><a class="dropdown-item" href="index.php?page=login&action=logout">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
 </nav>
 </body>
