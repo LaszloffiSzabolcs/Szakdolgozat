@@ -5,12 +5,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-sajat sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
   <a class="navbar-brand" href="index.php?page=home">Home</a>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
   <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="">Kérelmek</a>
+        <a class="nav-link text-white" href="">Kérelmek</a>
       </li>
     </div>
     <ul class="navbar-nav navbar-right">
