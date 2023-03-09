@@ -56,22 +56,22 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
   </div>
   <div class="form-check">
     <input class="form-check-input" type="radio" name="flexRadioDefault" id="Szabadnapkerelem">
-    <label class="form-check-label text-white" for="flexRadioDefault2">
+    <label class="form-check-label text-white" for="flexRadioDefault2" >
       Szabadnap kérelme
     </label>
   </div>
 </div><br>
 <div class="row justify-content-center">
   <div class="col-sm-2">
-    <div class="form-group date-input-container display-flex justify-content-center align-items-center">
-      <label class="text-white">Mettől?</label>
-      <input type="date" class="form-control rounded" id="kezdate" required>
-    </div>
+  <div class="form-group date-input-container display-flex justify-content-center align-items-center">
+  <label class="text-white">Mettől?</label>
+  <input type="date" class="form-control rounded" id="kezdate" required pattern="\d{4}-\d{2}-\d{2}" required>
+</div>
   </div>
   <div class="col-sm-2">
     <div class="form-group date-input-container display-flex justify-content-center align-items-center">
       <label class="text-white">Meddig?</label>
-      <input type="date" class="form-control rounded" id="befdate" required>
+      <input type="date" class="form-control rounded" id="befdate" required pattern="\d{4}-\d{2}-\d{2}" required>
     </div>
   </div> 
 </div> 
