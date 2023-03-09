@@ -10,7 +10,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
   <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link text-white" href="">Kérelmek</a>
+        <a class="nav-link text-white" href="index.php?page=kerelem">Kérelmek</a>
       </li>
     </div>
     <ul class="navbar-nav navbar-right">
